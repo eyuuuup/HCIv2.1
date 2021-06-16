@@ -69,9 +69,10 @@ footer {
   float: right;
 }
 
-h3 {
+#title {
   font-family: 'Archivo', sans-serif;
   font-weight: 600;
+  padding-left: 0.5em;
 }
 
 .nav-masthead .nav-link:hover
@@ -93,12 +94,6 @@ h3 {
   border-bottom: .25rem solid transparent;
 }
 
-.icon {
-  float: left;
-  width: 30%;
-  height: auto;
-  
-}
 
 select {
   background-color: transparent;
