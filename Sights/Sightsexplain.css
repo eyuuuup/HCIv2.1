@@ -5,10 +5,14 @@
   font-size: 250%;
 }
 .footer-bottom{
-  background-color: #AFAFAF;
+  background-color: grey;
   color: black;
 }
-.p1{
+.p2{
   color: blue;
   font-size: 250%;
+}
+.Sight-desc{
+  background-color: #CDCDCD;
+  color: black;
 }
