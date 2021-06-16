@@ -1,0 +1,22 @@
+
+::placeholder {
+    color:black !important;
+    opacity: 1 !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff
+}
+
+.footer {
+    color:black;
+    background-color: #AFAFAF;
+}
+
+.blue {
+    color: #0047D6
+}
+
+.form-control {
+    background-color: #B4BADA
+}
+
