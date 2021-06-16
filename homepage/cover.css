@@ -5,10 +5,6 @@ a:hover {
   text-decoration: none; 
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  color: #fff
-}
-
 html,
 body {
   
@@ -32,7 +28,6 @@ header {
   right: 0;
 }
 
-
 main {
   position: relative;
   margin: auto;
@@ -52,7 +47,6 @@ main {
   font-weight: 900;
   font-style: bold;
 }
-
 
 footer {
   bottom: 0;

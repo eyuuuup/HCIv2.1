@@ -1,0 +1,28 @@
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff
+}
+
+.vertical-center {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+
+}
+
+.form-control {
+  background-color: #B4BADA
+}
+
+::placeholder {
+  color:black !important;
+  opacity: 1 !important;
+}
+
+.footer {
+  color:black;
+  background-color: #AFAFAF;
+}
+
+.blue {
+  color: #0047D6
+}
