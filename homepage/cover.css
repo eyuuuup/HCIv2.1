@@ -5,6 +5,10 @@ a:hover {
   text-decoration: none; 
 }
 
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff
+}
+
 html,
 body {
   
@@ -58,14 +62,6 @@ footer {
   background-color: rgba(255, 255, 255, .75);
   color: black;
   padding-top: 1rem;
-}
-
-.masthead-brand {
-  float: left;
-}
-
-.nav-masthead {
-  float: right;
 }
 
 #title {
