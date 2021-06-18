@@ -104,6 +104,7 @@ activePolygon.on('click', function(e) {
 document.getElementById('sumbit').onclick = submit_func;
 
 document.getElementById('cancel').onclick = cancel_func;
+
   /*==============================================
                 TILE LAYER and WMS
     ================================================*/
@@ -193,7 +194,7 @@ document.getElementById('cancel').onclick = cancel_func;
                     LAYER CONTROL
     ================================================*/
     var baseMaps = {
-        "OSM": osm,
+        "Basic": osm,
         'Google Street': googleStreets,
         "Google Satellite": googleSat,
     };

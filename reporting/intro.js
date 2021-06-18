@@ -82,118 +82,74 @@ var submit_func = function() {
 //    window.location.href = "../redirect.html";
 };
 
+function activateMun() {
+    if (!munClicked) {
+        curZone = munText;
+        munClicked = true;
+        neiClicked = false;
+        milClicked = false;
+        polygonMun.setStyle({fillColor: 'white'});
+        polygonNei.setStyle({fillColor: 'Orange'});
+        polygonMil.setStyle({fillColor: 'blue'});
+        mymap.setView(munCenter, 15);
+     }
+}
+
+function activateMil() {
+    if (!milClicked) {
+        curZone = milText;
+        munClicked = false;
+        neiClicked = false;
+        milClicked = true;
+        polygonMun.setStyle({fillColor: 'red'});
+        polygonNei.setStyle({fillColor: 'Orange'});
+        polygonMil.setStyle({fillColor: 'white'});
+        mymap.setView(milCenter, 15);
+    }
+}
+
+function activateNei() {
+    if (!neiClicked) {
+        curZone = neiText;
+        munClicked = false;
+        neiClicked = true;
+        milClicked = false;
+        polygonMun.setStyle({fillColor: 'red'});
+        polygonNei.setStyle({fillColor: 'white'});
+        polygonMil.setStyle({fillColor: 'blue'});
+        mymap.setView(neiCenter, 15);
+    }
+}
+
 /*==============================================
      Event Handlers
 ================================================*/
 
 document.getElementById('chooseButton').onclick = submit_func;
 
-document.getElementById("alpha").onclick = function(e) {
-    if (!munClicked) {
-        curZone = munText;
-        munClicked = true;
-        neiClicked = false;
-        milClicked = false;
-        polygonMun.setStyle({fillColor: 'white'});
-        polygonNei.setStyle({fillColor: 'yellow'});
-        polygonMil.setStyle({fillColor: 'blue'});
-        mymap.setView(munCenter, 15);
-        setText(e.latlng.lat, e.latlng.lng);
-     }
-}
+document.getElementById("alpha").onclick = function(e) { activateMun(); }
 
-document.getElementById("bravo").onclick = function(e) {
-    if (!neiClicked) {
-        curZone = neiText;
-        munClicked = false;
-        neiClicked = true;
-        milClicked = false;
-        polygonMun.setStyle({fillColor: 'red'});
-        polygonNei.setStyle({fillColor: 'white'});
-        polygonMil.setStyle({fillColor: 'blue'});
-        mymap.setView(neiCenter, 15);
-        setText(e.latlng.lat, e.latlng.lng);
-    }
-}
+document.getElementById("bravo").onclick = function(e) { activateNei(); }
 
-document.getElementById("charlie").onclick = function(e) {
-    if (!milClicked) {
-        curZone = milText;
-        munClicked = false;
-        neiClicked = false;
-        milClicked = true;
-        polygonMun.setStyle({fillColor: 'red'});
-        polygonNei.setStyle({fillColor: 'yellow'});
-        polygonMil.setStyle({fillColor: 'white'});
-        mymap.setView(milCenter, 15);
-        setText(e.latlng.lat, e.latlng.lng);
-    }
-}
+document.getElementById("charlie").onclick = function(e) { activateMil(); }
 
-polygonMun.on('click', function(e) {
-    if (!munClicked) {
-        curZone = munText;
-        munClicked = true;
-        neiClicked = false;
-        milClicked = false;
-        polygonMun.setStyle({fillColor: 'white'});
-        polygonNei.setStyle({fillColor: 'yellow'});
-        polygonMil.setStyle({fillColor: 'blue'});
-        mymap.setView(munCenter, 15);
-        setText(e.latlng.lat, e.latlng.lng);
-    }
-});
+polygonMun.on('click', function(e) { activateMun(); });
 
-polygonMil.on('click', function(e) {
-    if (!milClicked) {
-        curZone = milText;
-        munClicked = false;
-        neiClicked = false;
-        milClicked = true;
-        polygonMun.setStyle({fillColor: 'red'});
-        polygonNei.setStyle({fillColor: 'yellow'});
-        polygonMil.setStyle({fillColor: 'white'});
-        mymap.setView(milCenter, 15);
-        setText(e.latlng.lat, e.latlng.lng);
-    }
-});
+polygonMil.on('click', function(e) { activateMil(); });
 
-polygonNei.on('click', function(e) {
-    if (!neiClicked) {
-        curZone = neiText;
-        munClicked = false;
-        neiClicked = true;
-        milClicked = false;
-        polygonMun.setStyle({fillColor: 'red'});
-        polygonNei.setStyle({fillColor: 'white'});
-        polygonMil.setStyle({fillColor: 'blue'});
-        mymap.setView(neiCenter, 15);
-        setText(e.latlng.lat, e.latlng.lng);
-    }
-});
+polygonNei.on('click', function(e) { activateNei(); });
 
-polygonMun.on('mouseover', function(e) {
-    polygonMun.setStyle({fillColor: 'white'});
-});
+polygonMun.on('mouseover', function(e) { polygonMun.setStyle({fillColor: 'white'}); });
 
-polygonMun.on('mouseout', function(e) {
-    if (!munClicked) polygonMun.setStyle({fillColor: 'red'});
-});
+polygonMun.on('mouseout', function(e) { if (!munClicked) polygonMun.setStyle({fillColor: 'red'}); });
 
-polygonMil.on('mouseover', function(e) {
-    polygonMil.setStyle({fillColor: 'white'});
-});
+polygonMil.on('mouseover', function(e) { polygonMil.setStyle({fillColor: 'white'}); });
 
-polygonMil.on('mouseout', function(e) {
-    if (!milClicked) polygonMil.setStyle({fillColor: 'blue'});
-});
-polygonNei.on('mouseover', function(e) {
-    polygonNei.setStyle({fillColor: 'white'});
-});
+polygonMil.on('mouseout', function(e) { if (!milClicked) polygonMil.setStyle({fillColor: 'blue'}); });
 
-polygonNei.on('mouseout', function(e) {
-    if (!neiClicked) polygonNei.setStyle({fillColor: 'orange'});
-});
+polygonNei.on('mouseover', function(e) { polygonNei.setStyle({fillColor: 'white'}); });
+
+polygonNei.on('mouseout', function(e) { if (!neiClicked) polygonNei.setStyle({fillColor: 'orange'}); });
 
   /*==============================================
                 TILE LAYER and WMS
@@ -284,7 +240,7 @@ polygonNei.on('mouseout', function(e) {
                     LAYER CONTROL
     ================================================*/
     var baseMaps = {
-        "OSM": osm,
+        "Basic": osm,
         'Google Street': googleStreets,
         "Google Satellite": googleSat,
     };
