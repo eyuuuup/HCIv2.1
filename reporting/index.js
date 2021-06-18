@@ -1,3 +1,6 @@
+
+
+
 /*==============================================
      Init Constants and click/lock variables
 ================================================*/
@@ -43,7 +46,6 @@ const attribution =
 // Initialize openstreetmap
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, { attribution });
-setText("No lat", "No lng");
 
 var polygonMun = L.polygon(munLatLngs, {color: 'red'}).addTo(mymap);
 var polygonMil = L.polygon(milLatLngs, {color: 'blue'}).addTo(mymap);
@@ -100,47 +102,97 @@ var submit_func = function() {
      Event Handlers
 ================================================*/
 
-polygonMun.on('click', function(e) {
-    if (!munClicked && lock_free) {
-        lock_free = false;
-        munClicked = true;
-        mymap.setView(munCenter, 15);
-        polygonMun.setStyle({fillColor: 'white'});
-        marker = L.marker(munCenter).addTo(mymap);
-        setText(e.latlng.lat, e.latlng.lng);
-    } else if (munClicked) {
-        marker.setLatLng(e.latlng);
-        setText(e.latlng.lat, e.latlng.lng);
-    } else {
 
+var sumbit_click = function(){
+    window.location.href = "../reporting/index.html";
+}; 
+
+document.getElementById('sumbit').onclick = sumbit_click;
+
+
+
+
+document.getElementById("alpha").onclick = function(e) {
+    if (!munClicked) {
+        munClicked = true;
+        neiClicked = false;
+        milClicked = false;
+        polygonMun.setStyle({fillColor: 'white'});
+        polygonNei.setStyle({fillColor: 'yellow'});
+        polygonMil.setStyle({fillColor: 'blue'});
+        mymap.setView(munCenter, 15);
+//        marker = L.marker(munCenter).addTo(mymap);
+        setText(e.latlng.lat, e.latlng.lng);
+     }
+}
+
+document.getElementById("bravo").onclick = function(e) {
+    if (!neiClicked) {
+        munClicked = false;
+        neiClicked = true;
+        milClicked = false;
+        polygonMun.setStyle({fillColor: 'red'});
+        polygonNei.setStyle({fillColor: 'white'});
+        polygonMil.setStyle({fillColor: 'blue'});
+        mymap.setView(neiCenter, 15);
+//        marker = L.marker(neiCenter).addTo(mymap);
+        setText(e.latlng.lat, e.latlng.lng);
+    }
+}
+
+document.getElementById("charlie").onclick = function(e) {
+    if (!milClicked) {
+        munClicked = false;
+        neiClicked = false;
+        milClicked = true;
+        polygonMun.setStyle({fillColor: 'red'});
+        polygonNei.setStyle({fillColor: 'yellow'});
+        polygonMil.setStyle({fillColor: 'white'});
+        mymap.setView(milCenter, 15);
+//        marker = L.marker(milCenter).addTo(mymap);
+        setText(e.latlng.lat, e.latlng.lng);
+    }
+}
+
+polygonMun.on('click', function(e) {
+    if (!munClicked) {
+        munClicked = true;
+        neiClicked = false;
+        milClicked = false;
+        polygonMun.setStyle({fillColor: 'white'});
+        polygonNei.setStyle({fillColor: 'yellow'});
+        polygonMil.setStyle({fillColor: 'blue'});
+        mymap.setView(munCenter, 15);
+//        marker = L.marker(munCenter).addTo(mymap);
+        setText(e.latlng.lat, e.latlng.lng);
     }
 });
 
 polygonMil.on('click', function(e) {
-    if (!milClicked && lock_free) {
-        lock_free = false;
+    if (!milClicked) {
+        munClicked = false;
+        neiClicked = false;
         milClicked = true;
+        polygonMun.setStyle({fillColor: 'red'});
+        polygonNei.setStyle({fillColor: 'yellow'});
+        polygonMil.setStyle({fillColor: 'white'});
         mymap.setView(milCenter, 15);
-        marker = L.marker(milCenter).addTo(mymap);
+//        marker = L.marker(milCenter).addTo(mymap);
         setText(e.latlng.lat, e.latlng.lng);
-    } else if (milClicked){
-        marker.setLatLng(e.latlng);
-        setText(e.latlng.lat, e.latlng.lng);
-    } else {
     }
 });
 
 polygonNei.on('click', function(e) {
-    if (!neiClicked && lock_free) {
-        lock_free = false;
+    if (!neiClicked) {
+        munClicked = false;
         neiClicked = true;
+        milClicked = false;
+        polygonMun.setStyle({fillColor: 'red'});
+        polygonNei.setStyle({fillColor: 'white'});
+        polygonMil.setStyle({fillColor: 'blue'});
         mymap.setView(neiCenter, 15);
-        marker = L.marker(neiCenter).addTo(mymap);
+//        marker = L.marker(neiCenter).addTo(mymap);
         setText(e.latlng.lat, e.latlng.lng);
-    } else if (neiClicked) {
-        marker.setLatLng(e.latlng);
-        setText(e.latlng.lat, e.latlng.lng);
-    } else {
     }
 });
 
@@ -149,7 +201,7 @@ polygonMun.on('mouseover', function(e) {
 });
 
 polygonMun.on('mouseout', function(e) {
-    if (lock_free) polygonMun.setStyle({fillColor: 'red'});
+    if (lock_free && !munClicked) polygonMun.setStyle({fillColor: 'red'});
 });
 
 polygonMil.on('mouseover', function(e) {
@@ -157,14 +209,14 @@ polygonMil.on('mouseover', function(e) {
 });
 
 polygonMil.on('mouseout', function(e) {
-    if (lock_free) polygonMil.setStyle({fillColor: 'blue'});
+    if (lock_free && !milClicked) polygonMil.setStyle({fillColor: 'blue'});
 });
 polygonNei.on('mouseover', function(e) {
     if (lock_free) polygonNei.setStyle({fillColor: 'white'});
 });
 
 polygonNei.on('mouseout', function(e) {
-    if (lock_free) polygonNei.setStyle({fillColor: 'orange'});
+    if (lock_free && !neiClicked) polygonNei.setStyle({fillColor: 'orange'});
 });
 
 document.getElementById('returnButton').onclick = return_func;

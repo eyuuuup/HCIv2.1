@@ -1,0 +1,17 @@
+#alphaButton {
+    width:5px;
+    height:5px;
+    background-color:red;
+}
+
+#betaButton {
+    width:5px;
+    height:5px;
+    background-color : orange;
+}
+
+#charlieButton {
+    width:5px;
+    height:5px;
+    background-color : blue;
+}
