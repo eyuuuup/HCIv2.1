@@ -1,3 +1,6 @@
+
+
+
 /*==============================================
      Init Constants and click/lock variables
 ================================================*/
@@ -98,6 +101,16 @@ var submit_func = function() {
 /*==============================================
      Event Handlers
 ================================================*/
+
+
+var sumbit_click = function(){
+    window.location.href = "../reporting/index.html";
+}; 
+
+document.getElementById('sumbit').onclick = sumbit_click;
+
+
+
 
 document.getElementById("alpha").onclick = function(e) {
     if (!munClicked && lock_free) {
