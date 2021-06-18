@@ -1,10 +1,6 @@
-
-
-
 /*==============================================
      Init Constants and click/lock variables
 ================================================*/
-
 let latitude;
 let longitude;
 
@@ -63,7 +59,6 @@ tiles.addTo(mymap);
 /*==============================================
      Util functions
 ================================================*/
-
 function setText(lat, lng) {
     latitude = lat;
     longitude = lng;
@@ -124,7 +119,6 @@ function activateNei() {
 /*==============================================
      Event Handlers
 ================================================*/
-
 document.getElementById('chooseButton').onclick = submit_func;
 
 document.getElementById("alpha").onclick = function(e) { activateMun(); }
@@ -216,7 +210,6 @@ polygonNei.on('mouseout', function(e) { if (!neiClicked) polygonNei.setStyle({fi
     var secondMarker = L.marker([29.3949, 83.1240], { icon: myIcon, draggable: true });
 
     console.log(singleMarker.toGeoJSON())
-
 
     /*==============================================
                 GEOJSON

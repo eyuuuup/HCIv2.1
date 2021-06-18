@@ -1,15 +1,10 @@
-
-
-
 /*==============================================
      Init Constants and click/lock variables
 ================================================*/
-
 let latitude;
 let longitude;
 
 var activeZone = localStorage.getItem("chosenZone");
-alert("current zone: " + activeZone);
 
 // constants for Municipal area
 const munTLPoint = [-4.451805, -81.300587];
@@ -73,7 +68,6 @@ var marker = L.marker(activeCenter).addTo(mymap);
 /*==============================================
      Util functions
 ================================================*/
-
 function setText(lat, lng) {
     latitude = lat;
     longitude = lng;
@@ -153,7 +147,6 @@ document.getElementById('cancel').onclick = cancel_func;
         transparent: true,
         attribution: "wms test"
     });
-
 
 
     /*==============================================
