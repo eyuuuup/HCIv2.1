@@ -43,7 +43,6 @@ const attribution =
 // Initialize openstreetmap
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, { attribution });
-setText("No lat", "No lng");
 
 var polygonMun = L.polygon(munLatLngs, {color: 'red'}).addTo(mymap);
 var polygonMil = L.polygon(milLatLngs, {color: 'blue'}).addTo(mymap);
