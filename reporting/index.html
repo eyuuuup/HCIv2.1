@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../common.css" rel="stylesheet">
+    <link href="reporting.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reporting - Lobitos-Piedritas</title>
   </head>
@@ -29,6 +30,35 @@
         </div>
       </nav>
 
+      <main>
+        <div class = "container">
+          <h1 class = "blue ms-5 mt-5">Report trash</h1>
+          <div class = "row">
+            <div class="ms-5 col-mb-12 w-25">
+                <label for="inputdate" class="form-label">Date</label>
+                <input type="date" class="form-control" id="inputdate">
+              </div>
+            <div class="col-mb-12 w-25">
+              <label for="inputtime" class="form-label">Time</label>
+              <input type="time" class="form-control" id="inputtime">
+            </div>
+          </div>
+      
+          <div class = "row">
+            <div class="ms-5 col-mb-12 w-50">
+                <label for="inputtype" class="form-label">Type trash</label>
+                <input type="email" class="form-control" id="inputtype" placeholder="i.e. glass, plastic, cotton, etc.">
+              </div>
+          </div>
+    
+          <div class = "row">
+            <div class="ms-5 col-mb-12 w-50">
+                <label for="inputamount" class="form-label">Amount trash (in kg)</label>
+                <input type="number" class="form-control" id="inputamount" placeholder="i.e. 4.3">
+            </div>
+          </div>
+        </div>
+      </main>
 
       <footer class="footer fixed-bottom">
         <div class="footer-bottom text-center">© Copyright info
