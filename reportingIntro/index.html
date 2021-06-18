@@ -16,10 +16,10 @@
   ></script>
   <style>
       #issMap {
-        height: 360px;
-        width : 500px
+        height: 600px;
+        width : 1200px
       }
-    </style>
+  </style>
 
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../common.css" rel="stylesheet">
@@ -48,24 +48,44 @@
   </div>
 </nav>
 
-<!--Debugging purposes-->
-<div class="container">
-  <p>
-    latitude: <span id="lat"></span>°<br />
-    longitude: <span id="lon"></span>°
-  </p>
-</div>
+    <div class = "row">
+      
+      
+      <div class="col-md-9">
 
-<div class="container">
-  <h1 class = "blue ms-5 mt-5">Choose Zone</h1>
-  <div id="issMap"></div>
-</div>
+        <div class="container">
+          <h1 class = "blue ms-5 mt-5">Choose Zone</h1>
+          <div id="issMap"></div>
+        </div>
+      
+        <div class="container">
+          <div class = "me-5 mt-5 mb-5 grid">
+            <button type="button" id="submitButton" class="btn btn-lg btn-primary">Choose</button>
+          </div>
+        </div>
+      </div>
 
-<div class="container">
-  <div class = "me-5 mt-5 mb-5 grid gap-2 d-md-flex justify-content-md-end">
-    <button type="button" id="submitButton" class="btn btn-lg btn-primary ms-5">Choose</button>
-  </div>
-</div>
+      <div class="d-flex col-md-3 mt-5">   
+        <div class="list-group">
+          <h1 class = "blue">Choose your zone</h1>
+          <a href="#" class="ps-5 list-group-item list-group-item-action list-group-item-secondary">Alpha - Churchill Hotel</a>
+          <a href="#" class="ps-5 list-group-item list-group-item-action list-group-item-dark">Bravo - Lobitos Surf Spot</a>
+          <a href="#" class="ps-5 list-group-item list-group-item-action list-group-item-secondary">Charlie - Zarumilla Beach</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+        </div>
+      </div>
+    </div>
 
 <footer class="footer fixed-bottom">
   <div class="footer-bottom text-center">© Copyright info
