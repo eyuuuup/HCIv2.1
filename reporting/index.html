@@ -47,14 +47,58 @@
           <div class = "row">
             <div class="ms-5 col-mb-12 w-50">
                 <label for="inputtype" class="form-label">Type trash</label>
-                <input type="email" class="form-control" id="inputtype" placeholder="i.e. glass, plastic, cotton, etc.">
+                <div id="inputtype">
+                  <div>
+                    <input type="radio" id="organic" name="typetrash" value="organic">
+                    <label for="organic">Organic</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="paper" name="typetrash" value="paper">
+                    <label for="paper">Paper</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="plastic" name="typetrash" value="plastic">
+                    <label for="plastic">Plastic</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="glass" name="typetrash" value="glass">
+                    <label for="glass">Glass</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="metal" name="typetrash" value="metal">
+                    <label for="metal">Metal</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="e-waste" name="typetrash" value="e-waste">
+                    <label for="e-waste">E-Waste</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="non-recycable" name="typetrash" value="non-recycable">
+                    <label for="non-recycable">Non-Recycable</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="special-waste" name="typetrash" value="special-waste">
+                    <label for="special-waste">Special Waste</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="expired-drugs" name="typetrash" value="expired-drugs">
+                    <label for="expired-drugs">Expired Drugs</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="other" name="typetrash" value="">
+                    <label for="other">
+                      Other
+                      <input type="input" id="otherinput">
+                    </label>
+                  </div>
+                </div>
               </div>
           </div>
     
           <div class = "row">
             <div class="ms-5 col-mb-12 w-50">
                 <label for="inputamount" class="form-label">Amount trash (in kg)</label>
-                <input type="number" class="form-control" id="inputamount" placeholder="i.e. 4.3">
+                <input type="number" min="0" class="form-control" id="inputamount" value="4">
             </div>
           </div>
         </div>
