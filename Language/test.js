@@ -1,6 +1,6 @@
-$('[lang="es"]').hide();
+$(".es").hide();
 
-$('#switch-lang').click(function() {
-  $('[lang="es"]').toggle();
-  $('[lang="en"]').toggle();
+$("#switch-lang").click(function(){
+  $(".en").toggle();
+  $(".es").toggle();
 });
