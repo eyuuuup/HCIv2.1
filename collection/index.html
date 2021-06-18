@@ -1,72 +1,119 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="index.css" rel="stylesheet">
-    <link href="../common.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Collection - Lobitos-Piedritas</title>
-    
-  </head>
+<head>
+  <meta charset="utf-8">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../common.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collection - Lobitos-Piedritas</title>
+</head>
 
-  <body>
-    <nav class="py-0 navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand ms-4" href="../homepage/index.html"><h1 class="display-6">Lobitos-Piedritas</h1></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="nav navbar-nav w-100 justify-content-evenly">
-              <a class="nav-link" href="index.html">Collection</a>
-              <a class="nav-link" href="../reporting/index.html">Reporting</a>
-              <a class="nav-link" href="../Sights/Sights.html">Sights</a>
-              <a class="nav-link" href="../About/src/index.html">About</a>
-              <a class="nav-link" href="../contact/index.html">Contact</a>
+<body>
+  <nav class="py-0 navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-4" href="../homepage/index.html">
+        <h1 class="display-6">Lobitos-Piedritas</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="nav navbar-nav w-100 justify-content-evenly">
+          <a class="nav-link" href="#">Collection</a>
+          <a class="nav-link" href="#">Reporting</a>
+          <a class="nav-link" href="../Sights/Sights.html">Sights</a>
+          <a class="nav-link" href="../About/src/index.html">About</a>
+          <a class="nav-link" href="index.html">Contact</a>
+        </div>
+        <button type="button" class="btn btn-info">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class = "row">
+      
+    <div class="col-md-8">
+      <div class = "container">
+        <h1 class = "blue ms-5 mt-5">Garbage collection</h1>
+
+        <div class = "row">
+          <div class="ms-5 col-mb-12 w-25">
+              <label for="inputdate" class="form-label">Date</label>
+              <input type="date" class="form-control" id="inputdate">
             </div>
-            <button type="button" class="btn btn-info">EN</button>
+          <div class="col-mb-12 w-25">
+            <label for="inputtime" class="form-label">Time</label>
+            <input type="time" class="form-control" id="inputtime">
           </div>
         </div>
-      </nav>
-      
-      <div class="d-flex flex-row-reverse col-md-12 mt-5 pe-5">
         
-        <div class="list-group">
-          <h1 class = "blue">Choose your zone</h1>
-          <a href="#" class="ps-5 list-group-item list-group-item-action list-group-item-secondary">Alpha - Churchill Hotel</a>
-          <a href="#" class="ps-5 list-group-item list-group-item-action list-group-item-dark">Bravo - Lobitos Surf Spot</a>
-          <a href="#" class="ps-5 list-group-item list-group-item-action list-group-item-secondary">Charlie - Zarumilla Beach</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-
+        <div class = "row">
+          <div class="ms-5 col-mb-12 w-50">
+              <label for="inputtype" class="form-label">Type</label>
+              <input type="input" class="form-control" id="inputtype" placeholder="e.g. Glass">
+            </div>
+        </div>
+  
+        <div class = "row">
+          <div class="ms-5 col-mb-12 w-50">
+              <label for="inputamount" class="form-label">Amount</label>
+              <input type="email" class="form-control" id="inputamount" placeholder="e.g. 4kg">
+            </div>
+        </div>
+  
+        <div class = "row">
+          <div class="ms-5 col-mb-12 w-75">
+              <label for="inputdesc" class="form-label">Description</label>
+              <textarea class="form-control" id="inputdesc" rows="12"></textarea>
+          </div>
         </div>
       </div>
-     
+    </div>
 
-      
-      <footer class="footer fixed-bottom">
-        <div class="footer-bottom text-center">© Copyright info
+    <div class="d-flex col-md-4 mt-5">   
+      <div class="list-group">
+        <h1 class = "blue">Zone 1 - Churchill Hotel</h1>
+        <a href="#" id="alpha" class="ps-5 list-group-item list-group-item-action list-group-item-secondary">Alpha - 504m from zone centre - Glass (6kg)</a>
+        <a href="#" id="bravo" class="ps-5 list-group-item list-group-item-action list-group-item-dark">Bravo - 114m from zone centre - Plastic (7kg)</a>
+        <a href="#" id="charlie" class="ps-5 list-group-item list-group-item-action list-group-item-secondary">Delta - 50m from zone centre - Plastic (8kg)</a>
+        <a href="#" id="delta" class="ps-5 list-group-item list-group-item-action list-group-item-dark">Delta - 114m from zone centre - Glass (5kg)</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+        <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+        
+        <div class="container">
+          <div class = "me-5 mt-5 mb-5 grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" id="cancel" class="btn btn-lg btn-outline-danger me-5">Cancel</button>
+            <button type="button" id="sumbit" class="btn btn-lg btn-primary ms-5">Sumbit</button>
+          </div>
         </div>
-      </footer>
+      </div>
+      
+    </div>
+  
+  </div>
+ 
+  <footer class="footer fixed-bottom">
+    <div class="footer-bottom text-center">© Copyright info
+    </div>
+  </footer>
 
-    <script
-			  src="https://code.jquery.com/jquery-3.6.0.min.js"
-			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-			  crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-  </body>
+  <script src="index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+</body>
 
 </html>
