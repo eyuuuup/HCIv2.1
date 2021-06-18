@@ -1,45 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""
+  />
+  <script
+          src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+          integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+          crossorigin=""
+  ></script>
+  <style>
+      #issMap {
+        height: 360px;
+        width : 500px
+      }
+    </style>
 
-  <head>
-    <meta charset="utf-8">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../common.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Reporting - Lobitos-Piedritas</title>
-  </head>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../common.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reporting - Lobitos-Piedritas</title>
 
-  <body>
-    <nav class="py-0 navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand ms-4" href="../homepage/index.html"><h1 class="display-6">Lobitos-Piedritas</h1></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="nav navbar-nav w-100 justify-content-evenly">
-              <a class="nav-link" href="../collection/index.html">Collection</a>
-              <a class="nav-link" href="index.html">Reporting</a>
-              <a class="nav-link" href="../Sights/Sights.html">Sights</a>
-              <a class="nav-link" href="../About/src/index.html">About</a>
-              <a class="nav-link" href="../contact/index.html">Contact</a>
-            </div>
-            <button type="button" class="btn btn-info">EN</button>
-          </div>
-        </div>
-      </nav>
+</head>
 
+<body>
+<nav class="py-0 navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-4" href="../homepage/index.html"><h1 class="display-6">Lobitos-Piedritas</h1></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="nav navbar-nav w-100 justify-content-evenly">
+        <a class="nav-link" href="../collection/index.html">Collection</a>
+        <a class="nav-link" href="index.html">Reporting</a>
+        <a class="nav-link" href="../Sights/Sights.html">Sights</a>
+        <a class="nav-link" href="../About/src/index.html">About</a>
+        <a class="nav-link" href="../contact/index.html">Contact</a>
+      </div>
+      <button type="button" class="btn btn-info">EN</button>
+    </div>
+  </div>
+</nav>
 
-      <footer class="footer fixed-bottom">
-        <div class="footer-bottom text-center">© Copyright info
-        </div>
-      </footer>
+<!--Debugging purposes-->
+<div class="container">
+  <p>
+    latitude: <span id="lat"></span>°<br />
+    longitude: <span id="lon"></span>°
+  </p>
+</div>
 
-    <script
-			  src="https://code.jquery.com/jquery-3.6.0.min.js"
-			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-			  crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-  </body>
+<div class="container">
+  <h1 class = "blue ms-5 mt-5">Choose Zone</h1>
+  <div id="issMap"></div>
+</div>
 
+<div class="container">
+  <div class = "me-5 mt-5 mb-5 grid gap-2 d-md-flex justify-content-md-end">
+    <button type="button" id="submitButton" class="btn btn-lg btn-primary ms-5">Choose</button>
+  </div>
+</div>
+
+<footer class="footer fixed-bottom">
+  <div class="footer-bottom text-center">© Copyright info
+  </div>
+</footer>
+
+<script src="point.js"></script>
+<script src="line.js"></script>
+<script src="polygon.js"></script>
+<script src="index.js"></script>
+</body>
 </html>
