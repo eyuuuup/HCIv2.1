@@ -1,3 +1,7 @@
+.list-group-item-secondary {
+    color: black;
+}
+
 .list-group-item {
     padding: .5rem 15rem;
 }
