@@ -26,3 +26,12 @@
 .blue {
   color: #0047D6
 }
+
+.list-group-item-secondary {
+  color: black;
+}
+
+.list-group-item.disabled, .list-group-item:disabled {
+  color: #535A5F;
+}
+
