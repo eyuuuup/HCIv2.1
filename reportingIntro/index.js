@@ -99,6 +99,50 @@ var submit_func = function() {
      Event Handlers
 ================================================*/
 
+document.getElementById("alpha").onclick = function(e) {
+    if (!munClicked && lock_free) {
+        lock_free = false;
+        munClicked = true;
+        mymap.setView(munCenter, 15);
+        polygonMun.setStyle({fillColor: 'white'});
+        marker = L.marker(munCenter).addTo(mymap);
+        setText(e.latlng.lat, e.latlng.lng);
+    } else if (munClicked) {
+        marker.setLatLng(e.latlng);
+        setText(e.latlng.lat, e.latlng.lng);
+    } else {
+
+    }
+}
+
+document.getElementById("bravo").onclick = function(e) {
+    if (!neiClicked && lock_free) {
+        lock_free = false;
+        neiClicked = true;
+        mymap.setView(neiCenter, 15);
+        marker = L.marker(neiCenter).addTo(mymap);
+        setText(e.latlng.lat, e.latlng.lng);
+    } else if (neiClicked) {
+        marker.setLatLng(e.latlng);
+        setText(e.latlng.lat, e.latlng.lng);
+    } else {
+    }
+}
+
+document.getElementById("charlie").onclick = function(e) {
+    if (!milClicked && lock_free) {
+        lock_free = false;
+        milClicked = true;
+        mymap.setView(milCenter, 15);
+        marker = L.marker(milCenter).addTo(mymap);
+        setText(e.latlng.lat, e.latlng.lng);
+    } else if (milClicked){
+        marker.setLatLng(e.latlng);
+        setText(e.latlng.lat, e.latlng.lng);
+    } else {
+    }
+}
+
 polygonMun.on('click', function(e) {
     if (!munClicked && lock_free) {
         lock_free = false;
