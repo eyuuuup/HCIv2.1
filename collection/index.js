@@ -1,4 +1,8 @@
 let today = new Date().toISOString().substr(0, 10);
+var sumbit_click = function(){
+    window.location.href = "../redirect.html";
+}; 
+
 
 var alpha = function(){
     document.getElementById("inputdate").value = today;
@@ -36,6 +40,7 @@ var reset_click = function () {
     document.getElementById("inputdesc").value = "";
  }
 
+document.getElementById('sumbit').onclick = sumbit_click;
 document.getElementById('cancel').onclick = reset_click;
 document.getElementById('alpha').onclick = alpha;
 document.getElementById('bravo').onclick = bravo;
