@@ -8,8 +8,8 @@
 let latitude;
 let longitude;
 
-var activeZone = localStorage.getItem("chosenZone");
-alert("current zone: " + activeZone);
+localStorage.setItem("chosenZone", "");
+var curZone = null;
 
 // constants for Municipal area
 const munTLPoint = [-4.451805, -81.300587];
@@ -38,14 +38,6 @@ const neiLatLngs = [neiTLPoint,neiTRPoint,neiBRPoint,neiBLPoint];
 const neiText = 'nei';
 var neiClicked = false;
 
-if      (activeZone == munText) {munClicked = true}
-else if (activeZone == milText) {milClicked = true}
-else if (activeZone == neiText) {neiClicked = true}
-else {
-    alert("something went wrong! :(");
-    window.location.href = "intro.html"
-}
-
 /*==============================================
      Init Map and Layers inside map
 ================================================*/
@@ -57,18 +49,16 @@ const attribution =
 // Initialize openstreetmap
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, { attribution });
-let activePolygon;
 
-if      (munClicked) activePolygon = L.polygon(munLatLngs, {color: 'red'}).addTo(mymap);
-else if (milClicked) activePolygon = L.polygon(milLatLngs, {color: 'blue'}).addTo(mymap);
-else if (neiClicked) activePolygon = L.polygon(neiLatLngs, {color: 'orange'}).addTo(mymap);
+var polygonMun = L.polygon(munLatLngs, {color: 'red'}).addTo(mymap);
+var polygonMil = L.polygon(milLatLngs, {color: 'blue'}).addTo(mymap);
+var polygonNei = L.polygon(neiLatLngs, {color: 'orange'}).addTo(mymap);
 
-const activeCenter  = activePolygon.getCenter();
-activePolygon.setStyle({fillColor: 'white'});
+const munCenter  = polygonMun.getCenter();
+const milCenter  = polygonMil.getCenter();
+const neiCenter  = polygonNei.getCenter();
 
 tiles.addTo(mymap);
-mymap.setView(activeCenter, 15);
-var marker = L.marker(activeCenter).addTo(mymap);
 
 /*==============================================
      Util functions
@@ -77,33 +67,134 @@ var marker = L.marker(activeCenter).addTo(mymap);
 function setText(lat, lng) {
     latitude = lat;
     longitude = lng;
-    console.log("Latitude: " + latitude);
-    console.log("Longitude: " + longitude);
 }
 
 // continue to report page
 var submit_func = function() {
-    //TODO: log all data and redirect to next screen for succesful submission.
-    //TODO: Can only be done, if all input have an input!
-    console.log("Latitude: " + latitude + " | Longitude: " + longitude);
-    window.location.href = "../redirect.html";
-};
-
-var cancel_func = function() {
-    window.location.href = "intro.html";
+    if (curZone != null) {
+        console.log('zone: ' + curZone)
+        localStorage.setItem("chosenZone", curZone);
+        window.location.href = "index.html"
+    } else {
+        alert("Choose a zone :(");
+        console.log('ok');
+    }
+//    window.location.href = "../redirect.html";
 };
 
 /*==============================================
      Event Handlers
 ================================================*/
-activePolygon.on('click', function(e) {
-    marker.setLatLng(e.latlng);
-    setText(e.latlng.lat, e.latlng.lng);
+
+document.getElementById('chooseButton').onclick = submit_func;
+
+document.getElementById("alpha").onclick = function(e) {
+    if (!munClicked) {
+        curZone = munText;
+        munClicked = true;
+        neiClicked = false;
+        milClicked = false;
+        polygonMun.setStyle({fillColor: 'white'});
+        polygonNei.setStyle({fillColor: 'yellow'});
+        polygonMil.setStyle({fillColor: 'blue'});
+        mymap.setView(munCenter, 15);
+        setText(e.latlng.lat, e.latlng.lng);
+     }
+}
+
+document.getElementById("bravo").onclick = function(e) {
+    if (!neiClicked) {
+        curZone = neiText;
+        munClicked = false;
+        neiClicked = true;
+        milClicked = false;
+        polygonMun.setStyle({fillColor: 'red'});
+        polygonNei.setStyle({fillColor: 'white'});
+        polygonMil.setStyle({fillColor: 'blue'});
+        mymap.setView(neiCenter, 15);
+        setText(e.latlng.lat, e.latlng.lng);
+    }
+}
+
+document.getElementById("charlie").onclick = function(e) {
+    if (!milClicked) {
+        curZone = milText;
+        munClicked = false;
+        neiClicked = false;
+        milClicked = true;
+        polygonMun.setStyle({fillColor: 'red'});
+        polygonNei.setStyle({fillColor: 'yellow'});
+        polygonMil.setStyle({fillColor: 'white'});
+        mymap.setView(milCenter, 15);
+        setText(e.latlng.lat, e.latlng.lng);
+    }
+}
+
+polygonMun.on('click', function(e) {
+    if (!munClicked) {
+        curZone = munText;
+        munClicked = true;
+        neiClicked = false;
+        milClicked = false;
+        polygonMun.setStyle({fillColor: 'white'});
+        polygonNei.setStyle({fillColor: 'yellow'});
+        polygonMil.setStyle({fillColor: 'blue'});
+        mymap.setView(munCenter, 15);
+        setText(e.latlng.lat, e.latlng.lng);
+    }
 });
 
-document.getElementById('sumbit').onclick = submit_func;
+polygonMil.on('click', function(e) {
+    if (!milClicked) {
+        curZone = milText;
+        munClicked = false;
+        neiClicked = false;
+        milClicked = true;
+        polygonMun.setStyle({fillColor: 'red'});
+        polygonNei.setStyle({fillColor: 'yellow'});
+        polygonMil.setStyle({fillColor: 'white'});
+        mymap.setView(milCenter, 15);
+        setText(e.latlng.lat, e.latlng.lng);
+    }
+});
 
-document.getElementById('cancel').onclick = cancel_func;
+polygonNei.on('click', function(e) {
+    if (!neiClicked) {
+        curZone = neiText;
+        munClicked = false;
+        neiClicked = true;
+        milClicked = false;
+        polygonMun.setStyle({fillColor: 'red'});
+        polygonNei.setStyle({fillColor: 'white'});
+        polygonMil.setStyle({fillColor: 'blue'});
+        mymap.setView(neiCenter, 15);
+        setText(e.latlng.lat, e.latlng.lng);
+    }
+});
+
+polygonMun.on('mouseover', function(e) {
+    polygonMun.setStyle({fillColor: 'white'});
+});
+
+polygonMun.on('mouseout', function(e) {
+    if (!munClicked) polygonMun.setStyle({fillColor: 'red'});
+});
+
+polygonMil.on('mouseover', function(e) {
+    polygonMil.setStyle({fillColor: 'white'});
+});
+
+polygonMil.on('mouseout', function(e) {
+    if (!milClicked) polygonMil.setStyle({fillColor: 'blue'});
+});
+polygonNei.on('mouseover', function(e) {
+    polygonNei.setStyle({fillColor: 'white'});
+});
+
+polygonNei.on('mouseout', function(e) {
+    if (!neiClicked) polygonNei.setStyle({fillColor: 'orange'});
+});
+
   /*==============================================
                 TILE LAYER and WMS
     ================================================*/
