@@ -14,9 +14,9 @@
         <script>
           function changeLanguage(languageId){
             if(languageId==1){
-                document.getElementById('dropdown07').innerHTML ='EN';
+                document.getElementById('dropdown07').innerHTML ='<img src="language.png" style="height: 1.5em"> EN';
             } else if(languageId==2){
-                document.getElementById('dropdown07').innerHTML ='ES';
+                document.getElementById('dropdown07').innerHTML ='<img src="language.png" style="height: 1.5em"> ES';
             }
           }
         </script>
@@ -41,7 +41,7 @@
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EN</a>
+                      <a class="nav-link dropdown-toggle" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="language.png" style="height: 1.5em"> EN</a>
                       <div class="dropdown-menu" aria-labelledby="dropdown07">
                           <a class="dropdown-item" href="#" onClick="javascript:changeLanguage(1)">English</a>
                           <a class="dropdown-item" href="#" onClick="javascript:changeLanguage(2)">Spanish</a>
