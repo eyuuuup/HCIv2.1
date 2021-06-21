@@ -34,6 +34,23 @@ const neiLatLngs = [neiTLPoint,neiTRPoint,neiBRPoint,neiBLPoint];
 const neiText = 'nei';
 var neiClicked = false;
 
+document.addEventListener("DOMContentLoaded", function(event) { 
+    var elements = document.querySelectorAll(".leaflet-control a");
+    for (var i = 0; i < elements.length; ++i) {
+    elements[i].setAttribute("tabindex", "-1");
+    }
+
+    var elements = document.querySelectorAll(".leaflet-container");
+    for (var i = 0; i < elements.length; ++i) {
+    elements[i].setAttribute("tabindex", "-1");
+    }
+
+    var elements = document.querySelectorAll(".leaflet-control-layers-selector");
+    for (var i = 0; i < elements.length; ++i) {
+    elements[i].setAttribute("tabindex", "-1");
+    }
+});
+
 /*==============================================
      Init Map and Layers inside map
 ================================================*/
