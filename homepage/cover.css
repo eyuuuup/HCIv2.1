@@ -40,6 +40,9 @@ main {
 }
 
 .cover-heading {
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 0.25em;
   bottom: 0;
   right: 0;
   font-size: 6vw;
