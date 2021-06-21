@@ -34,23 +34,23 @@
 <body>
   <nav class="py-0 navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand ms-4" href="../homepage/index.html"><h1 class="display-6">Lobitos-Piedritas</h1></a>
+      <a class="navbar-brand ms-4" href="../homepage/index.html" tabindex="1"><h1 class="display-6">Lobitos-Piedritas</h1></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="nav navbar-nav w-100 justify-content-evenly">
-          <a class="nav-link" href="../collection/intro.html">Collection</a>
-          <a class="nav-link" href="../reporting/intro.html">Reporting</a>
-          <a class="nav-link" href="../Sights/Sights.html">Sights</a>
-          <a class="nav-link" href="../About/src/index.html">About</a>
-          <a class="nav-link" href="../contact/index.html">Contact</a>
+          <a class="nav-link" href="../collection/intro.html" tabindex="2">Collection</a>
+          <a class="nav-link" href="intro.html" tabindex="3">Reporting</a>
+          <a class="nav-link" href="../Sights/Sights.html" tabindex="4">Sights</a>
+          <a class="nav-link" href="../About/src/index.html" tabindex="5">About</a>
+          <a class="nav-link" href="../contact/index.html" tabindex="6">Contact</a>
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item dropdown">
-                  <!-- Accessibility - img alt text -->
-                  <a class="nav-link dropdown-toggle" tabindex=0  id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../language.png" style="height: 1.5em" alt="language icon"> EN</a>
+                  <!-- Accessibility - img alt text -->     
+                  <a class="nav-link dropdown-toggle" tabindex=7  id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../language.png" style="height: 1.5em" alt="language icon"> EN</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown07">
                       <a class="dropdown-item" href="#" onClick="javascript:changeLanguage(1)">English</a>
                       <a class="dropdown-item" href="#" onClick="javascript:changeLanguage(2)">Spanish</a>
@@ -62,53 +62,54 @@
     </div>
   </nav>
 
-    <div class = "row">
+<div class = "row">
 
 
-      <div class="col-md-9">
+  <div class="col-md-9">
 
-        <div class="container">
-          <h1 class = "blue mt-5">Choose Zone</h1>
-          <div id="issMap"></div>
-        </div>
-
-
-      </div>
-
-      <div class="d-flex col-md-3 mt-5">
-        <div class="list-group container">
-          <h1 class = "blue">Choose your zone</h1>
-          <a href="#" id="alpha" class="ps-5 list-group-item list-group-item-action list-group-item-secondary">
-            <button type="button" id="alphaButton" class="btn btn-lg btn-primary"></button>
-            Churchill Hotel</a>
-          <a href="#" id="bravo" class="ps-5 list-group-item list-group-item-action list-group-item-dark">
-            <button type="button" id="betaButton" class="btn btn-lg btn-primary"></button>
-            Lobitos Surf Spot</a>
-          <a href="#" id="charlie" class="ps-5 list-group-item list-group-item-action list-group-item-secondary">
-            <button type="button" id="charlieButton" class="btn btn-lg btn-primary"></button>
-            Zarumilla Beach</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
-          <a href="#" class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
-          <div class="container">
-            <div class = "me-5 mt-5 mb-5 grid">
-              <button type="button" id="chooseButton" class="btn btn-lg btn-primary">Choose</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
+    <div class="container"  tabindex="-1">
+      <h1 class = "blue mt-5">Choose Zone</h1>
+      <div id="issMap" tabindex="-1"></div>
     </div>
+
+
+  </div>
+
+  <div class="d-flex col-md-3 mt-5">
+    <div class="list-group container">
+      <h1 class = "blue">Choose your zone</h1>
+      <a href="#" id="alpha" class="ps-5 list-group-item list-group-item-action list-group-item-secondary" tabindex="8">
+        <button type="button" id="alphaButton" class="btn btn-lg btn-primary" tabindex="-1"></button>
+        Churchill Hotel</a>
+      <a href="#" id="bravo" class="ps-5 list-group-item list-group-item-action list-group-item-dark" tabindex="9">
+        <button type="button" id="betaButton" class="btn btn-lg btn-primary" tabindex="-1"></button>
+        Lobitos Surf Spot</a>
+      <a href="#" id="charlie" class="ps-5 list-group-item list-group-item-action list-group-item-secondary" tabindex="10">
+        <button type="button" id="charlieButton" class="btn btn-lg btn-primary" tabindex="-1"></button>
+        Zarumilla Beach</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-dark">To be determined</a>
+      <a class="ps-5 disabled list-group-item list-group-item-action list-group-item-secondary">To be determined</a>
+      <div class="container">
+        <div class = "me-5 mt-5 mb-5 grid">
+          <button type="button" id="chooseButton" class="btn btn-lg btn-primary" tabindex="11">Choose</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
 
 <footer class="footer fixed-bottom">
   <div class="footer-bottom text-center">© Copyright info
