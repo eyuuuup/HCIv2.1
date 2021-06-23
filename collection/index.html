@@ -59,7 +59,10 @@
     <div class="col-md-8">
       <div class = "container">
         <h1 class = "blue ms-5 mt-5">Garbage collection</h1>
-
+        <div class="ms-5 w-75">
+          <p>Enter the date and time of when you have collected the trash, the type of the trash and the amount of trash in kilograms below. If you find it necessary, 
+            you can also add an explanation.</p>
+        </div>
         <div class = "row">
           <div class="ms-5 col-mb-12 w-25">
               <label for="inputdate" class="form-label">Date</label>
@@ -78,12 +81,10 @@
             </div>
         </div>
   
-        <div class = "row">
-          <div class="ms-5 col-mb-12 w-50">
-              <label for="inputamount" class="form-label">Amount</label>
-              <input type="email" class="form-control" id="inputamount" placeholder="e.g. 4kg">
-            </div>
-        </div>
+        <div class="ms-5 col-mb-12 w-50">
+          <label for="inputamount" class="form-label">Amount trash (in kg)</label>
+          <input type="number" min="0" class="form-control" id="inputamount" value="4">
+      </div>
   
         <div class = "row">
           <div class="ms-5 col-mb-12 w-75">
@@ -96,7 +97,7 @@
 
     <div class="d-flex col-md-4 mt-5">   
       <div class="list-group">
-        <h1 class = "blue">Zone 1 - Churchill Hotel</h1>
+        <h1 class = "blue">Zones</h1>
         <a href="#" id="alpha" class="ps-5 list-group-item list-group-item-action list-group-item-secondary">Alpha - 504m from zone centre - Glass (6kg)</a>
         <a href="#" id="bravo" class="ps-5 list-group-item list-group-item-action list-group-item-dark">Bravo - 114m from zone centre - Plastic (7kg)</a>
         <a href="#" id="charlie" class="ps-5 list-group-item list-group-item-action list-group-item-secondary">Delta - 50m from zone centre - Plastic (8kg)</a>
